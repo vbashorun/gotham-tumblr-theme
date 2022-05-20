@@ -1,0 +1,51 @@
+/////////////////////////////               Screens           /////////////////////
+// borrowed from Bootstrap 4
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+
+////////////////////////////                Utility          ////////////////////
+$mod-scale: 1.618; //golden ratio scaling
+
+$image-overlay-color: rgba(0, 0, 0, 0.4);
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+
+/////////////////////////////               Color           /////////////////////
+$base-color: #141414; // off-black
+$neutral-color: #404040; // medium gray
+$neutral-color-2: #fff; // white
+$neutral-color-3: #000; // black
+
+$post-color: #1E1E1E; // dark gray
+$accent-color: #B8A07D; // burnt sand
+$accent-color-2: #2A5662; // dark green
+
+
+$accent-color-2-rgba: rgba(42, 86, 98, 0.5);
+$post-overlay-rgba: rgba(	80, 80, 80, 0.85);
+
+/////////////////////////////               Z-level           /////////////////////
+$max-z-level: 5;
+$z-level-2: 3;
+$negative-z-level: -1;
+$negative-z-level-2: -2;
+
+/////////////////////////////               Font           /////////////////////
+$main-font: 'Blog-Main';
+$main-font-bold: 'Blog-Main-Bol';
+$secondary-font: 'Blog-Secondary';

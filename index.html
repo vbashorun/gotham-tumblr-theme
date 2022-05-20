@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {block:TagPage}
+        {Tag} |
+      {/block:TagPage}
+
+      {block:SearchPage}
+        {lang:Search results for SearchQuery} |
+      {/block:SearchPage}
+
+      {block:PostSummary}
+        {PostSummary} |
+      {/block:PostSummary}
+
+      {Title}
+    </title>
+
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {block:Hidden}
+    <meta name="image:Masthead Image" content=""/>
+    {/block:Hidden}
+
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
+    <link rel="stylesheet" href="./css/gotham.css" />
+
+    <style>
+
+    </style>
+  </head>
+
+  <body class="main-font {block:IndexPage}is-index-page{/block:IndexPage} {block:PermalinkPage}is-permalink-page{/block:PermalinkPage}">
+
+    <header class="mobile-header">
+      <img id="mobileMenuButton" class="left-corner-button" src="https://static.tumblr.com/dszz0mz/exvp9qa52/mobile_menu.png"/>
+      <h3>{Title}</h3>
+    </header>
+
+    <div class="masthead">
+      <div class="image-overlay"></div>
+
+
+      <div id="search"  class="mobile-header">
+        <img id="mastheadArrow" class="left-corner-icon" src="https://static.tumblr.com/dszz0mz/dKZp9qhuc/arrow.png" />
+        <form>
+          <img src="https://static.tumblr.com/dszz0mz/Yqkp9tyyb/mag_glass.png" />
+          <input placeholder="Search..." />
+        </form>
+      </div>
+
+      <div id="blogInfo" class="color-primary">
+        <img id="blogPortrait" src="{PortraitURL-128}" />
+        <h2 >{Title}</h2>
+        <p>{Description}</p>
+
+        <div id="socialMediaContainer">
+          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/AHqp9vrd4/500_icon.png" />
+          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/4pbp9vrda/pinterest_icon.png" />
+          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/IZ7p9vrdg/insta_icon.png" />
+          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/6Cpp9vrdn/twitter_icon.png" />
+        </div>
+      </div>
+
+      <div id="blogActions" class="color-primary">
+        <div id="pagesButton" class="blog-action">
+          <img src="https://static.tumblr.com/dszz0mz/8dcp9x8cg/pages_icon.png" />
+          <div>Pages</div>
+        </div>
+
+        <div class="blog-action">
+          <img src="https://static.tumblr.com/dszz0mz/HGSp9x3td/submit_icon.png" />
+          <div>Submit</div>
+        </div>
+
+        <div class="blog-action">
+          <img src="https://static.tumblr.com/dszz0mz/BaNp9x3tj/ask_icon.png" />
+          <div>Ask</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="mobile-menu">
+      <h3>Mobile Menu</h3>
+      <img id="pagesArrow" class="left-corner-icon" src="https://static.tumblr.com/dszz0mz/dKZp9qhuc/arrow.png" />
+    </div>
+
+    <main class="backdrop">
+      <!-- Home page -->
+      {block:HomePage}
+      {block:Posts}
+      <div class="post-container">
+        {block:RebloggedFrom}
+        <div class="reblog-nub font-size-details">
+          Reblogged from <span>{ReblogParentName}</span>
+        </div>
+        {/block:RebloggedFrom}
+      <div class="post main-font">
+
+        <div class="post-content post-{PostType}">
+          {block:Photo}                 <!-- Photo Post -->
+          <img src="{PhotoURL-500}" >
+          <div class="photo-zoom">
+            <img src="https://static.tumblr.com/dszz0mz/2Lppbbj00/zoom_icon.png" />
+          </div>
+
+          </img>
+
+
+          {/block:Photo}
+
+
+          {block:Photoset}              <!-- Photoset Post -->
+          {Photoset}
+          {/block:Photoset}
+        </div>
+
+        <div class="post-details font-size-body">
+          {block:Photo}{block:Exif}
+              <ul>...</ul>
+          {/block:Exif}{/block:Photo}
+
+          {block:Caption}{Caption}{/block:Caption}
+
+          <div class="post-footer">
+            <section class="font-size-details color-neutral">
+              <div>
+                {block:NoteCount}
+                {NoteCount} notes
+                <br />
+                {/block:NoteCount}
+
+                {block:Date}
+                {Month}{DayOfMonth},{Year}
+                {/block:Date}
+              </div>
+            </section>
+
+            <div class="post-actions">
+                <div class="post-action post-action-more">
+                  <img src="https://static.tumblr.com/dszz0mz/wfvpaanck/post_action_more.png" />
+                </div>
+                <div class="post-action">{ReblogButton color="grey" size="20"}</div>
+                <div class="post-action">{LikeButton color="grey" size="20"}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+      {/block:Posts}
+      {/block:HomePage}
+
+      <!-- Search results -->
+      {block:SearchPage}
+      <div id="searchPage">
+      </div>
+      {/block:SearchPage}
+
+      <!-- Tag page -->
+      {block:TagPage}
+      <div id="tagPage">
+      </div>
+      {/block:TagPage}
+    </main>
+
+    <!-- {block:Pagination}
+    <nav class="pagination">
+      <ul>
+        {block:PreviousPage}<li><a href="{PreviousPage}">{lang:Previous}</a></li>{/block:PreviousPage}
+        {block:NextPage}<li><a href="{NextPage}">{lang:Next}</a></li>{/block:NextPage}
+      </ul>
+    </nav>
+    {/block:Pagination} -->
+
+    <script>
+
+    </script>
+  </body>
+</html>
