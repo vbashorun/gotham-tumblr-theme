@@ -18,7 +18,7 @@ $image-overlay-color: rgba(0, 0, 0, 0.4);
     }
   } @else if $exponent < 0 {
     @for $i from 1 through -$exponent {
-      $value: $value / $number;
+      $value: calc($value / $number);
     }
   }
 
