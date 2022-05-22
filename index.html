@@ -32,6 +32,7 @@
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
 
+    <!--  Block:Hidden is funky way of hiding markup from showing up in the DOM -->
     {block:Hidden}
     <meta name="image:Masthead Image" content=""/>
     {/block:Hidden}
@@ -48,6 +49,11 @@
       .tmblr-iframe, .tmblr-iframe--unified-controls{
           display: none!important;
       }
+
+      /* This needs to be inlined because stylesheets don't support Tumblr template code */
+      .masthead {
+        background-image: url('{image:Masthead Image}');
+      }
     </style>
 
     {block:IfInfiniteScroll}
@@ -58,7 +64,7 @@
   <body class="main-font {block:IndexPage}is-index-page{/block:IndexPage} {block:PermalinkPage}is-permalink-page{/block:PermalinkPage}">
 
     <header class="mobile-header">
-      <img id="mobileMenuButton" class="left-corner-button" src="https://static.tumblr.com/dszz0mz/exvp9qa52/mobile_menu.png"/>
+      <img id="mobileMenuButton" src="https://static.tumblr.com/dszz0mz/exvp9qa52/mobile_menu.png"/>
       <h3>{Title}</h3>
     </header>
 
@@ -83,11 +89,12 @@
         <h2 >{Title}</h2>
         <p>{Description}</p>
 
+        <!-- TODO: Update this section to only allow 4 customizable social media links -->
         <div id="socialMediaContainer">
-          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/AHqp9vrd4/500_icon.png" />
-          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/4pbp9vrda/pinterest_icon.png" />
-          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/IZ7p9vrdg/insta_icon.png" />
-          <img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/6Cpp9vrdn/twitter_icon.png" />
+          <div><img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/AHqp9vrd4/500_icon.png" /></div>
+          <div><img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/4pbp9vrda/pinterest_icon.png" /></div>
+          <div><img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/IZ7p9vrdg/insta_icon.png" /></div>
+          <div><img class="social-media-icon" src="https://static.tumblr.com/dszz0mz/6Cpp9vrdn/twitter_icon.png" /></div>
         </div>
       </div>
 
@@ -107,8 +114,6 @@
           <div>Ask</div>
         </div>
       </div>
-
-
     </div>
 
     <main class="content">
