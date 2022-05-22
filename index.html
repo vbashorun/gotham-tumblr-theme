@@ -1,7 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <!------------------------------------------------------------------
+
+    Theme Name: Gotham
+    Version: 1.0.0
+    Author: Victor Bashorun
+
+    ------------------------------------------------------------------->
     <title>
       {block:TagPage}
         {Tag} |
@@ -18,25 +24,35 @@
       {Title}
     </title>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="if:Infinite Scroll" content="0">
+
     {block:Description}
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {block:Hidden}
     <meta name="image:Masthead Image" content=""/>
     {/block:Hidden}
 
     <link rel="shortcut icon" href="{Favicon}"/>
-    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 
     <!-- These will need to be changed to the static resources in your account -->
     <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
-    <link rel="stylesheet" href="./css/gotham.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/v90rc95v4/gotham.css" />
 
-    <style></style>
+    <style>
+      /* remove the 'open app' button that pops up on mobile */
+      .tmblr-iframe, .tmblr-iframe--unified-controls{
+          display: none!important;
+      }
+    </style>
+
+    {block:IfInfiniteScroll}
+    <script type="text/javascript" src="https://matthewrayfield.github.io/tumblr-infinite-scrolling/infinitescrolling.js"></script>
+    {/block:IfInfiniteScroll}
   </head>
 
   <body class="main-font {block:IndexPage}is-index-page{/block:IndexPage} {block:PermalinkPage}is-permalink-page{/block:PermalinkPage}">
@@ -46,9 +62,13 @@
       <h3>{Title}</h3>
     </header>
 
+    <div class="mobile-menu">
+      <h3>Mobile Menu</h3>
+      <img id="pagesArrow" class="left-corner-icon" src="https://static.tumblr.com/dszz0mz/dKZp9qhuc/arrow.png" />
+    </div>
+
     <div class="masthead">
       <div class="image-overlay"></div>
-
 
       <div id="search"  class="mobile-header">
         <img id="mastheadArrow" class="left-corner-icon" src="https://static.tumblr.com/dszz0mz/dKZp9qhuc/arrow.png" />
@@ -91,89 +111,87 @@
 
     </div>
 
-    <div class="mobile-menu">
-      <h3>Mobile Menu</h3>
-      <img id="pagesArrow" class="left-corner-icon" src="https://static.tumblr.com/dszz0mz/dKZp9qhuc/arrow.png" />
-    </div>
-
-    <main class="backdrop">
-      <!-- Home page -->
-      {block:HomePage}
-      {block:Posts}
-      <div class="post-container">
-        {block:RebloggedFrom}
-        <div class="reblog-nub font-size-details">
-          Reblogged from <span>{ReblogParentName}</span>
-        </div>
-        {/block:RebloggedFrom}
-      <div class="post main-font">
-
-        <div class="post-content post-{PostType}">
-          {block:Photo}                 <!-- Photo Post -->
-          <img src="{PhotoURL-500}" >
-          <div class="photo-zoom">
-            <img src="https://static.tumblr.com/dszz0mz/2Lppbbj00/zoom_icon.png" />
+    <main class="content">
+      <div class="autopagerize_page_element">
+        <!-- Home page -->
+        {block:HomePage}
+        {block:Posts}
+        <div class="post-container">
+          {block:RebloggedFrom}
+          <div class="reblog-nub font-size-details">
+            Reblogged from <span>{ReblogParentName}</span>
           </div>
+          {/block:RebloggedFrom}
+          <div class="post main-font">
 
-          </img>
-
-
-          {/block:Photo}
-
-
-          {block:Photoset}              <!-- Photoset Post -->
-          {Photoset}
-          {/block:Photoset}
-        </div>
-
-        <div class="post-details font-size-body">
-          {block:Photo}{block:Exif}
-              <ul>...</ul>
-          {/block:Exif}{/block:Photo}
-
-          {block:Caption}{Caption}{/block:Caption}
-
-          <div class="post-footer">
-            <section class="font-size-details color-neutral">
-              <div>
-                {block:NoteCount}
-                {NoteCount} notes
-                <br />
-                {/block:NoteCount}
-
-                {block:Date}
-                {Month}{DayOfMonth},{Year}
-                {/block:Date}
+            <div class="post-content post-{PostType}">
+              {block:Photo}                 <!-- Photo Post -->
+              <img src="{PhotoURL-500}" >
+              <div class="photo-zoom">
+                <img src="https://static.tumblr.com/dszz0mz/2Lppbbj00/zoom_icon.png" />
               </div>
-            </section>
 
-            <div class="post-actions">
-                <div class="post-action post-action-more">
-                  <img src="https://static.tumblr.com/dszz0mz/wfvpaanck/post_action_more.png" />
+              </img>
+
+
+              {/block:Photo}
+
+
+              {block:Photoset}              <!-- Photoset Post -->
+              {Photoset}
+              {/block:Photoset}
+            </div>
+
+            <div class="post-details font-size-body">
+              {block:Photo}{block:Exif}
+                  <ul>...</ul>
+              {/block:Exif}{/block:Photo}
+
+              {block:Caption}{Caption}{/block:Caption}
+
+              <div class="post-footer">
+                <section class="font-size-details color-neutral">
+                  <div>
+                    {block:NoteCount}
+                    {NoteCount} notes
+                    <br />
+                    {/block:NoteCount}
+
+                    {block:Date}
+                    {Month}{DayOfMonth},{Year}
+                    {/block:Date}
+                  </div>
+                </section>
+
+                <div class="post-actions">
+                    <div class="post-action post-action-more">
+                      <img src="https://static.tumblr.com/dszz0mz/wfvpaanck/post_action_more.png" />
+                    </div>
+                    <div class="post-action">{ReblogButton color="grey" size="20"}</div>
+                    <div class="post-action">{LikeButton color="grey" size="20"}</div>
                 </div>
-                <div class="post-action">{ReblogButton color="grey" size="20"}</div>
-                <div class="post-action">{LikeButton color="grey" size="20"}</div>
+              </div>
+
             </div>
           </div>
 
         </div>
-      </div>
+        {/block:Posts}
+        {/block:HomePage}
 
-    </div>
-      {/block:Posts}
-      {/block:HomePage}
+        <!-- Search results -->
+        {block:SearchPage}
+        <div id="searchPage">
+        </div>
+        {/block:SearchPage}
 
-      <!-- Search results -->
-      {block:SearchPage}
-      <div id="searchPage">
-      </div>
-      {/block:SearchPage}
+        <!-- Tag page -->
+        {block:TagPage}
+        <div id="tagPage">
+        </div>
+        {/block:TagPage}
 
-      <!-- Tag page -->
-      {block:TagPage}
-      <div id="tagPage">
       </div>
-      {/block:TagPage}
     </main>
 
     <!-- {block:Pagination}
@@ -185,8 +203,7 @@
     </nav>
     {/block:Pagination} -->
 
-    <script>
+    <script src="https://static.tumblr.com/dszz0mz/ehCrc95vd/gotham.js"></script>
 
-    </script>
   </body>
 </html>

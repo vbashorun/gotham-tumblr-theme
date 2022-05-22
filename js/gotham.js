@@ -1,3 +1,5 @@
+console.log('this is also a smoke test');
+
 var mobileMenuButton = document.getElementById("mobileMenuButton");
 
 mobileMenuButton.addEventListener("click", (e) => {

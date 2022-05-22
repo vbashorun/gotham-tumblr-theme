@@ -17,10 +17,6 @@ html, body {
   font-size: 1em;
 }
 
-.backdrop {
-  background-color: #141414;
-}
-
 .post {
   width: 100%;
   border-radius: 5px;
@@ -304,6 +300,12 @@ header h3 {
 }
 
 main {
+  background-color: #141414;
+  width: 100%;
+  min-height: 100%;
+}
+
+.autopagerize_page_element {
   width: 100%;
   min-height: 100%;
   padding-top: 12vh;

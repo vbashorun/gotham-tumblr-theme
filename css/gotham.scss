@@ -25,10 +25,6 @@ html, body {
   font-size: 1em; //100% of user's browser default
 }
 
-.backdrop {
-  background-color: $base-color;
-}
-
 .post {
   width: 100%;
   border-radius: 5px;
@@ -377,6 +373,12 @@ header {
 }
 
 main {
+  background-color: $base-color;
+  width: 100%;
+  min-height: 100%;
+}
+
+.autopagerize_page_element {
   width: 100%;
   min-height: 100%;
   padding-top: 12vh;
