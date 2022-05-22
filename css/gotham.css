@@ -300,12 +300,13 @@ header h3 {
 }
 
 main {
-  background-color: #141414;
   width: 100%;
   min-height: 100%;
+  max-height: 100%;
 }
 
 .autopagerize_page_element {
+  background-color: #141414;
   width: 100%;
   min-height: 100%;
   padding-top: 12vh;
@@ -322,6 +323,8 @@ main {
 @media (min-width: 992px) {
   .masthead, .masthead-extended {
     width: 30%;
+    position: fixed;
+    left: 0px;
   }
 
   body {
@@ -336,5 +339,7 @@ main {
 
   main {
     width: 70%;
+    position: absolute;
+    right: 0px;
   }
 }

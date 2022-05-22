@@ -373,12 +373,13 @@ header {
 }
 
 main {
-  background-color: $base-color;
   width: 100%;
   min-height: 100%;
+  max-height: 100%;
 }
 
 .autopagerize_page_element {
+  background-color: $base-color;
   width: 100%;
   min-height: 100%;
   padding-top: 12vh;
@@ -399,7 +400,8 @@ main {
 
   .masthead {
     width: 30%;
-
+    position: fixed;
+    left: 0px;
   }
 
   body {
@@ -414,5 +416,7 @@ main {
 
   main {
     width: 70%;
+    position: absolute;
+    right: 0px;
   }
 }
