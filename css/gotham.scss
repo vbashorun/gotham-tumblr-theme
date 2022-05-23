@@ -339,17 +339,18 @@ header {
   .post-actions {
     display: flex;
     justify-content: space-evenly;
-  }
 
-  .post-action {
-    margin: 0px 10px;
-  }
+    .post-action {
+      margin: 0px 10px;
+    }
 
-  .post-action-more {
-    img {
-      width: 20px;
+    .post-action-more {
+      img {
+        width: 20px;
+      }
     }
   }
+
 
   .post-footer {
     width: 100%;
@@ -360,11 +361,32 @@ header {
 
 .post-photo {
 
-  img {
+  .photo {
     width: 100%;
     border-radius: 5px 5px;
   }
+
+  .html_photoset {
+    max-width: 700px;
+    margin: 0px auto;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 1vh;
+
+    iframe {
+      width: 95%;
+    }
+  }
+
+  .photoset_row {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
 
 .photo-zoom {
   width: 100%;
@@ -408,6 +430,18 @@ main {
   align-items: center;
 }
 
+
+/**************************
+*   Tablet Styling       *
+**************************/
+
+@media (min-width: $screen-md-min) {
+
+  .post-photo .html_photoset iframe {
+    width: 75%;
+  }
+  
+}
 
 /**************************
 *   Desktop Styling       *

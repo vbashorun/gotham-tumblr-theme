@@ -277,10 +277,10 @@ header h3 {
   display: flex;
   justify-content: space-evenly;
 }
-.post .post-action {
+.post .post-actions .post-action {
   margin: 0px 10px;
 }
-.post .post-action-more img {
+.post .post-actions .post-action-more img {
   width: 20px;
 }
 .post .post-footer {
@@ -289,9 +289,25 @@ header h3 {
   justify-content: space-between;
 }
 
-.post-photo img {
+.post-photo .photo {
   width: 100%;
   border-radius: 5px 5px;
+}
+.post-photo .html_photoset {
+  max-width: 700px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+}
+.post-photo .html_photoset iframe {
+  width: 95%;
+}
+.post-photo .photoset_row {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-zoom {

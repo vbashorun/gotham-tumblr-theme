@@ -1,3 +1,5 @@
+console.log('script loaded. Also a console test');
+
 var mobileMenuButton = document.getElementById("mobileMenuButton");
 
 mobileMenuButton.addEventListener("click", (e) => {
@@ -27,3 +29,9 @@ pagesArrow.addEventListener("click", () => {
   masthead.classList.add("mobile-menu");
   masthead.classList.remove("mobile-menu-extended");
 });
+
+
+var iframeList = document.querySelectorAll('html_photoset');
+if (iframeList) {
+  console.log('iframeList: ', iframeList);
+}

@@ -42,7 +42,7 @@
 
     <!-- These will need to be changed to the static resources in your account -->
     <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
-    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/v90rc95v4/gotham.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/xZHrccz69/gotham.css" />
 
     <style>
       /* remove the 'open app' button that pops up on mobile */
@@ -131,16 +131,12 @@
 
             <div class="post-content post-{PostType}">
               {block:Photo}                 <!-- Photo Post -->
-              <img src="{PhotoURL-500}" >
-              <div class="photo-zoom">
-                <img src="https://static.tumblr.com/dszz0mz/2Lppbbj00/zoom_icon.png" />
-              </div>
-
+              <img class="photo" src="{PhotoURL-500}" >
+                <div class="photo-zoom">
+                  <img src="https://static.tumblr.com/dszz0mz/2Lppbbj00/zoom_icon.png" />
+                </div>
               </img>
-
-
               {/block:Photo}
-
 
               {block:Photoset}              <!-- Photoset Post -->
               {Photoset}
