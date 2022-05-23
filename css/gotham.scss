@@ -102,6 +102,7 @@ html, body {
   @extend .masthead;
 
   left: 0%;
+  position: fixed;
 }
 
 #search {
@@ -126,7 +127,7 @@ html, body {
     align-items: center;
 
     img {
-      width: 1.5rem;
+      width: 1.3rem;
     }
 
     input {
@@ -145,7 +146,7 @@ html, body {
 }
 
 #mastheadArrow {
-  width: 2rem;
+  width: 1.5rem;
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -203,12 +204,12 @@ html, body {
 
 #blogPortrait {
   display: block;
-  border: 2px solid black;
+  border: 2px solid $base-color;
   border-radius: 2px;
 }
 
 #blogActions {
-  width: 50%;
+  width: 60%;
   height: 44vh;
 
   display: flex;
@@ -216,8 +217,8 @@ html, body {
   justify-content: space-evenly;
 
   position: absolute;
-  top: 56vh;
   left: 50%;
+  bottom: 0%;
   transform: translateX(-50%);
 }
 
@@ -229,15 +230,23 @@ html, body {
   align-items: center;
 
   img {
-    width: 28%;
+    width: 85%;
     display: block;
+  }
+
+  div:nth-of-type(1) {
+    width: 8vh;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background-color: $accent-color;
     border-radius: 50%;
     padding: 0%;
   }
 
-  div {
+  div:nth-of-type(2n) {
     width: 60%;
     padding: 2%;
     border: 1px solid $neutral-color-2;
@@ -281,6 +290,27 @@ header {
 .post-container {
   width: 90%;
   margin: 10px 0px;
+
+  .reblog-nub {
+    height: 2rem;
+    padding: 0.5rem;
+    display: inline-block;
+
+    background-color: $post-color;
+    color: $neutral-color-2;
+
+    span {
+      color: $accent-color;
+    }
+  }
+
+  .reblog_button {
+
+  }
+
+  .like_button {
+
+  }
 }
 
 .post {
@@ -323,31 +353,8 @@ header {
 
   .post-footer {
     width: 100%;
-
     display: flex;
     justify-content: space-between;
-
-  }
-
-  .reblog-nub {
-    height: 2rem;
-    padding: 0.5rem;
-    display: inline-block;
-
-    background-color: $post-color;
-    color: $neutral-color-2;
-
-    span {
-      color: $accent-color;
-    }
-  }
-
-  .reblog_button {
-
-  }
-
-  .like_button {
-
   }
 }
 
@@ -412,6 +419,33 @@ main {
     width: 30%;
     position: fixed;
     left: 0px;
+  }
+
+  #blogPortrait {
+    border-width: 5px;
+    position: absolute;
+    top: 0%;
+    right: -2vw;
+  }
+
+  #blogInfo {
+    height: 80vh;
+    justify-content: center;
+
+    p {
+      margin: 3vh 0px;
+    }
+  }
+
+  #blogActions {
+    width: 6vw;
+    left: 100%;
+  }
+
+  .blog-action {
+    div:nth-of-type(2n) {
+      display: none;
+    }
   }
 
   body {
