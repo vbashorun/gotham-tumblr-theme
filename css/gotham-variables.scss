@@ -40,8 +40,10 @@ $accent-color-2-rgba: rgba(42, 86, 98, 0.5);
 $post-overlay-rgba: rgba(	80, 80, 80, 0.85);
 
 /////////////////////////////               Z-level           /////////////////////
-$max-z-level: 5;
+$max-z-level: 7;
+$z-level-3: 5;
 $z-level-2: 3;
+$z-level-base: 1;
 $negative-z-level: -1;
 $negative-z-level-2: -2;
 

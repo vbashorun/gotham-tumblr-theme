@@ -42,7 +42,7 @@
 
     <!-- These will need to be changed to the static resources in your account -->
     <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
-    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/3kArcegja/gotham.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/84Krceo49/gotham.css" />
 
     <style>
       /* remove the 'open app' button that pops up on mobile */
@@ -123,11 +123,11 @@
         {block:Posts}
         <div class="post-container">
           {block:RebloggedFrom}
-          <div class="reblog-nub font-size-details">
+          <div class="reblog-tab font-size-details">
             Reblogged from <span>{ReblogParentName}</span>
           </div>
           {/block:RebloggedFrom}
-          <div class="post main-font">
+          <div class="post main-font {block:RebloggedFrom}reblogged{/block:RebloggedFrom}">
 
             <div class="post-content post-{PostType}">
               {block:Photo}                 <!-- Photo Post -->

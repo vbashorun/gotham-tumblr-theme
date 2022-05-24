@@ -83,6 +83,38 @@ html, body {
   left: 0%;
 }
 
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: $post-color;
+  box-shadow: 5px 5px 20px 0px $neutral-color-3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: $z-level-3;
+
+  img {
+    width: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+
+  }
+
+  h3 {
+    width: 65%;
+    margin: 0px auto;
+    color: $neutral-color-2;
+    text-align: center;
+  }
+}
+
 .masthead {
   width: 100%;
   height: 100%;
@@ -95,7 +127,7 @@ html, body {
   top: 0px;
   left: -100%;
   transition: left 0.2s ease-in;
-  z-index: $z-level-2;
+  z-index: $max-z-level;
 }
 
 .masthead-extended {
@@ -255,46 +287,16 @@ html, body {
   }
 }
 
-header {
-  width: 100%;
-  height: 10vh;
-  background-color: $post-color;
-  box-shadow: 5px 5px 20px 0px $neutral-color-3;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: $z-level-2;
-
-  img {
-    width: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
-
-  }
-
-  h3 {
-    width: 65%;
-    margin: 0px auto;
-    color: $neutral-color-2;
-    text-align: center;
-  }
-}
-
 .post-container {
   width: 90%;
   margin: 10px 0px;
 
-  .reblog-nub {
+  .reblog-tab {
     height: 2rem;
     padding: 0.5rem;
     display: inline-block;
+    position: relative;
+    z-index: $z-level-2;
 
     background-color: $post-color;
     color: $neutral-color-2;
@@ -317,6 +319,7 @@ header {
   width: 100%;
   border-radius: 5px;
   position: relative;
+  z-index: $z-level-base;
 
   background-color: $post-color;
   color: $neutral-color-2;
@@ -357,6 +360,10 @@ header {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.reblogged {
+  border-radius: 0px 5px 5px 5px;
 }
 
 .post-photo {
@@ -440,7 +447,7 @@ main {
   .post-photo .html_photoset iframe {
     width: 75%;
   }
-  
+
 }
 
 /**************************
@@ -453,6 +460,10 @@ main {
     width: 30%;
     position: fixed;
     left: 0px;
+  }
+
+  #mastheadArrow {
+    display: none;
   }
 
   #blogPortrait {
