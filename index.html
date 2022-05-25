@@ -42,7 +42,7 @@
 
     <!-- These will need to be changed to the static resources in your account -->
     <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
-    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/84Krceo49/gotham.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/qePrcggy7/gotham.css" />
 
     <style>
       /* remove the 'open app' button that pops up on mobile */
@@ -130,7 +130,8 @@
           <div class="post main-font {block:RebloggedFrom}reblogged{/block:RebloggedFrom}">
 
             <div class="post-content post-{PostType}">
-              {block:Photo}                 <!-- Photo Post -->
+
+              {block:Photo}                  <!-- Photo Post -->
               <img class="photo" src="{PhotoURL-500}" >
                 <div class="photo-zoom">
                   <img src="https://static.tumblr.com/dszz0mz/2Lppbbj00/zoom_icon.png" />
@@ -138,9 +139,86 @@
               </img>
               {/block:Photo}
 
-              {block:Photoset}              <!-- Photoset Post -->
+              {block:Photoset}               <!-- Photoset Post -->
               {Photoset}
               {/block:Photoset}
+
+              {block:Panorama}               <!-- Panorama Post -->
+              {/block:Panorama}
+
+              {block:Text}                   <!-- Text Post -->
+              {block:Title} {Title} {/block:Title}
+              {Body}
+              {/block:Text}
+
+              {block:Quote}                  <!-- Quote Post -->
+              {Quote}
+              {block:Source} {Source} {/block:Source}
+              {/block:Quote}
+
+              {block:Link}                   <!-- Link Post -->
+              {block:Thumbnail}
+              <div>{Thumbnail}</div>
+              <div>{Thumbnail-HighRes}</div>
+              {/block:Thumbnail}
+              {Name}
+              {URL}
+              {block:Description} {Description} {/block:Description}
+              {/block:Link}
+
+              {block:Chat}                   <!-- Chat Post -->
+              {block:Title} {Title} {/block:Title}
+              {block:Lines}
+              {block:Label} {Label} {/block:Label}
+              {Line}
+              {/block:Lines}
+              {/block:Chat}
+
+              {block:Audio}                  <!-- Audio Post -->
+
+              {block:AlbumArt}
+              {AlbumArtURL}
+              {/block:AlbumArt}
+
+              {block:AudioEmbed} {AudioEmbed} {/block:AudioEmbed}
+
+              {block:AudioPlayer} {AudioPlayer} {/block:AudioPlayer}
+
+              {block:Artist}
+              {Artist}
+              {/block:Artist}
+
+              {block:TrackName}
+              {TrackName}
+              {/block:TrackName}
+
+              {block:Album}
+              {Album}
+              {/block:Album}
+
+              {/block:Audio}
+
+
+
+              {block:Video}                  <!-- Video Post -->
+
+              {block:VideoThumbnail}
+              {VideoThumbnailURL}
+              {/block:VideoThumbnail}
+
+              {Video-700}
+
+              {/block:Video}
+
+              {block:Answer}                 <!-- Answer Post -->
+              {Asker}
+
+              {Question}
+
+              {block:Answerer} {Answerer} {/block:Answerer}
+
+              {Answer}
+              {/block:Answer}
             </div>
 
             <div class="post-details font-size-body">
