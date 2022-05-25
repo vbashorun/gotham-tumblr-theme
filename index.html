@@ -117,7 +117,7 @@
     </div>
 
     <main class="content">
-      <div class="autopagerize_page_element">
+      <div class="autopagerize_page_element"> <!-- This containing element facilitates endless scroll -->
         <!-- Home page -->
         {block:HomePage}
         {block:Posts}
@@ -149,33 +149,32 @@
               {/block:Exif}{/block:Photo}
 
               {block:Caption}{Caption}{/block:Caption}
-
-              <div class="post-footer">
-                <section class="font-size-details color-neutral">
-                  <div>
-                    {block:NoteCount}
-                    {NoteCount} notes
-                    <br />
-                    {/block:NoteCount}
-
-                    {block:Date}
-                    {Month}{DayOfMonth},{Year}
-                    {/block:Date}
-                  </div>
-                </section>
-
-                <div class="post-actions">
-                    <div class="post-action post-action-more">
-                      <img src="https://static.tumblr.com/dszz0mz/wfvpaanck/post_action_more.png" />
-                    </div>
-                    <div class="post-action">{ReblogButton color="grey" size="20"}</div>
-                    <div class="post-action">{LikeButton color="grey" size="20"}</div>
-                </div>
-              </div>
-
             </div>
-          </div>
 
+            <div class="post-footer">
+              <section class="font-size-details color-neutral">
+                <div>
+                  {block:NoteCount}
+                  {NoteCount} notes
+                  <br />
+                  {/block:NoteCount}
+
+                  {block:Date}
+                  {Month}{DayOfMonth},{Year}
+                  {/block:Date}
+                </div>
+              </section>
+
+              <div class="post-actions">
+                  <div class="post-action post-action-more">
+                    <img src="https://static.tumblr.com/dszz0mz/wfvpaanck/post_action_more.png" />
+                  </div>
+                  <div class="post-action">{ReblogButton color="grey" size="20"}</div>
+                  <div class="post-action">{LikeButton color="grey" size="20"}</div>
+              </div>
+            </div>
+
+          </div>
         </div>
         {/block:Posts}
         {/block:HomePage}

@@ -276,6 +276,23 @@ header h3 {
   min-height: 10vh;
   padding: 1rem 1.5rem;
 }
+.post .post-details a {
+  color: #B8A07D;
+}
+.post .post-details a:hover {
+  color: #fff;
+}
+.post .post-details a:visited {
+  color: #404040;
+}
+.post .post-details blockquote {
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: #404040;
+  margin: 0px 0 1.5rem;
+  padding-left: 1.2em;
+  quotes: none;
+}
 .post .post-actions {
   display: flex;
   justify-content: space-evenly;
@@ -288,6 +305,7 @@ header h3 {
 }
 .post .post-footer {
   width: 100%;
+  padding: 0px 1.5rem 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
 }

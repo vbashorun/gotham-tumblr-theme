@@ -337,7 +337,30 @@ header {
     width: 100%;
     min-height: 10vh;
     padding: 1rem 1.5rem;
+
+    a {
+
+      color: $accent-color;
+
+      &:hover {
+        color: $neutral-color-2;
+      }
+
+      &:visited {
+        color: $neutral-color;
+      }
+    }
+
+    blockquote {
+      border-left-width: 3px;
+      border-left-style: solid;
+      border-left-color: $neutral-color;
+      margin: 0px 0 1.5rem;
+      padding-left: 1.2em;
+      quotes: none;
+    }
   }
+
 
   .post-actions {
     display: flex;
@@ -357,6 +380,7 @@ header {
 
   .post-footer {
     width: 100%;
+    padding: 0px 1.5rem 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
   }
