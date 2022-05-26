@@ -328,39 +328,101 @@ header {
   display: flex;
   flex-direction: column;
 
+  a {
+
+    color: $accent-color;
+
+    &:hover {
+      color: $neutral-color-2;
+    }
+
+    &:visited {
+      color: $neutral-color;
+    }
+  }
+
+  blockquote {
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: $neutral-color;
+    margin: 0px 0 1.5rem;
+    padding-left: 1.2em;
+    quotes: none;
+  }
+
   .post-content {
     width: 100%;
     position: relative;
+
+
+  }
+
+  .post-photo {
+
+    .photo {
+      display: block;
+      width: 100%;
+      border-radius: 5px 5px 0px 0px;
+    }
+
+    .zoom-overlay {
+      width: 100%;
+      height: 100%;
+      background-color: $post-overlay-rgba;
+      opacity: 0;
+      border-radius: 5px 5px 0px 0px;
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 50%;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .html_photoset {
+      max-width: 700px;
+      margin: 0px auto;
+
+      display: flex;
+      justify-content: center;
+      padding-top: 1vh;
+
+      iframe {
+        width: 95%;
+      }
+    }
+
+    .photoset_row {
+      width: 100% !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .post-text {
+    padding: 1rem 1.5rem;
+
+    * {
+      max-width: 100%;
+    }
   }
 
   .post-details {
     width: 100%;
-    min-height: 10vh;
+    min-height: 2vh;
     padding: 1rem 1.5rem;
-
-    a {
-
-      color: $accent-color;
-
-      &:hover {
-        color: $neutral-color-2;
-      }
-
-      &:visited {
-        color: $neutral-color;
-      }
-    }
-
-    blockquote {
-      border-left-width: 3px;
-      border-left-style: solid;
-      border-left-color: $neutral-color;
-      margin: 0px 0 1.5rem;
-      padding-left: 1.2em;
-      quotes: none;
-    }
   }
-
 
   .post-actions {
     display: flex;
@@ -377,7 +439,6 @@ header {
     }
   }
 
-
   .post-footer {
     width: 100%;
     padding: 0px 1.5rem 1rem 1.5rem;
@@ -388,58 +449,6 @@ header {
 
 .reblogged {
   border-radius: 0px 5px 5px 5px;
-}
-
-.post-photo {
-
-  .photo {
-    width: 100%;
-    border-radius: 5px 5px;
-  }
-
-  .html_photoset {
-    max-width: 700px;
-    margin: 0px auto;
-
-    display: flex;
-    justify-content: center;
-    padding-top: 1vh;
-
-    iframe {
-      width: 95%;
-    }
-  }
-
-  .photoset_row {
-    width: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-
-.photo-zoom {
-  width: 100%;
-  height: 100%;
-  background-color: $post-overlay-rgba;
-  opacity: 0;
-
-  position: absolute;
-  top: 0px;
-  left: 0px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 50%;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 main {
@@ -468,7 +477,7 @@ main {
 
 @media (min-width: $screen-md-min) {
 
-  .post-photo .html_photoset iframe {
+  .post .post-photo .html_photoset iframe {
     width: 75%;
   }
 
