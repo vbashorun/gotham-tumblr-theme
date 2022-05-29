@@ -336,7 +336,21 @@ header h3 {
   max-width: 100%;
 }
 .post .post-quote {
+  min-height: 30vh;
   padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.post .post-quote .quote-icon {
+  width: 40vw;
+  position: absolute;
+  opacity: 0.2;
+  align-self: flex-start;
+}
+.post .post-quote .quote-source {
+  align-self: flex-end;
 }
 .post .post-details {
   width: 100%;
@@ -386,6 +400,12 @@ main {
 *   Tablet Styling       *
 **************************/
 @media (min-width: 768px) {
+  .post .post-quote .quote-source {
+    align-self: center;
+  }
+  .post .post-quote .quote-icon {
+    width: 20vw;
+  }
   .post .post-photo .html_photoset iframe {
     width: 75%;
   }

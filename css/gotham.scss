@@ -419,7 +419,25 @@ header {
   }
 
   .post-quote {
+    min-height: 30vh;
     padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .quote-icon {
+      width: 40vw;
+      position: absolute;
+      opacity: 0.2;
+
+      align-self: flex-start;
+    }
+
+    .quote-source {
+      align-self: flex-end;
+    }
   }
 
   .post-details {
@@ -481,8 +499,18 @@ main {
 
 @media (min-width: $screen-md-min) {
 
-  .post .post-photo .html_photoset iframe {
-    width: 75%;
+  .post {
+    .post-quote .quote-source {
+      align-self: center;
+    }
+
+    .post-quote .quote-icon {
+      width: 20vw;
+    }
+
+    .post-photo .html_photoset iframe {
+      width: 75%;
+    }
   }
 
 }
