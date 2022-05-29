@@ -124,10 +124,10 @@
         <div class="post-container">
           {block:RebloggedFrom}
           <div class="reblog-tab font-size-details">
-            Reblogged from <span>{ReblogParentName}</span>
+            Reblogged from <span class="color-accent">{ReblogParentName}</span>
           </div>
           {/block:RebloggedFrom}
-          <div class="post main-font {block:RebloggedFrom}reblogged{/block:RebloggedFrom}">
+          <div class="post main-font {block:RebloggedFrom}reblogged-post{/block:RebloggedFrom}">
 
             <div class="post-content post-{PostType}">
 
@@ -152,8 +152,9 @@
               {/block:Text}
 
               {block:Quote}                  <!-- Quote Post -->
-              {Quote}
-              {block:Source} {Source} {/block:Source}
+              <img class="quote-icon" src="https://static.tumblr.com/dszz0mz/JPhrcmt74/commas.png" />
+              "{Quote}"
+              <span class="color-accent">{block:Source} - {Source} {/block:Source}</span>
               {/block:Quote}
 
               {block:Link}                   <!-- Link Post -->
