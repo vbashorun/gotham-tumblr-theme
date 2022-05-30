@@ -352,6 +352,40 @@ header h3 {
 .post .post-quote .quote-source {
   align-self: flex-end;
 }
+.post .post-link .link-header {
+  width: 100%;
+}
+.post .post-link .link-header a {
+  display: block;
+  width: 100%;
+  min-height: 15vh;
+  position: relative;
+  text-decoration: none;
+  background-color: #B8A07D;
+}
+.post .post-link .link-header + p {
+  padding: 1rem 1.5rem;
+}
+.post .post-link .link-image {
+  width: 100%;
+}
+.post .post-link .link-footer {
+  width: 100%;
+  height: 15vh;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(to top, #1E1E1E, 70%, rgba(80, 80, 80, 0));
+}
+.post .post-link .link-footer h3 {
+  margin: 1rem 0px;
+}
+.post .post-link .link-footer p {
+  margin: 0px;
+}
 .post .post-details {
   width: 100%;
   min-height: 2vh;
@@ -388,7 +422,7 @@ main {
   background-color: #141414;
   width: 100%;
   min-height: 100%;
-  padding-top: 12vh;
+  padding-top: 11vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -400,14 +434,20 @@ main {
 *   Tablet Styling       *
 **************************/
 @media (min-width: 768px) {
+  .post .post-photo .html_photoset iframe {
+    width: 75%;
+  }
   .post .post-quote .quote-source {
     align-self: center;
   }
   .post .post-quote .quote-icon {
     width: 20vw;
   }
-  .post .post-photo .html_photoset iframe {
-    width: 75%;
+  .post .post-link .link-header a {
+    min-height: 30vh;
+  }
+  .post .post-link .link-footer {
+    height: 30vh;
   }
 }
 /**************************

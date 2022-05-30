@@ -353,8 +353,6 @@ header {
   .post-content {
     width: 100%;
     position: relative;
-
-
   }
 
   .post-photo {
@@ -411,7 +409,7 @@ header {
   }
 
   .post-text {
-    padding: 1rem 1.5rem;
+    padding: $content-padding;
 
     * {
       max-width: 100%;
@@ -420,7 +418,7 @@ header {
 
   .post-quote {
     min-height: 30vh;
-    padding: 1rem 1.5rem;
+    padding: $content-padding;
 
     display: flex;
     flex-direction: column;
@@ -440,10 +438,55 @@ header {
     }
   }
 
+  .post-link {
+    .link-header {
+      width: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+        min-height: 15vh;
+        position: relative;
+        text-decoration: none;
+        background-color: $accent-color;
+      }
+
+      & + p {
+        padding: $content-padding;
+      }
+    }
+
+    .link-image {
+      width: 100%;
+    }
+
+    .link-footer {
+      width: 100%;
+      height: 15vh;
+      padding: $content-padding;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      position: absolute;
+      bottom: 0px;
+      background: linear-gradient(to top, $post-color, 70%, rgb(80 80 80 / 0%));
+
+      h3 {
+        margin: 1rem 0px;
+      }
+
+      p {
+        margin: 0px;
+      }
+    }
+  }
+
   .post-details {
     width: 100%;
     min-height: 2vh;
-    padding: 1rem 1.5rem;
+    padding: $content-padding;
   }
 
   .post-actions {
@@ -463,7 +506,7 @@ header {
 
   .post-footer {
     width: 100%;
-    padding: 0px 1.5rem 1rem 1.5rem;
+    padding: 0px 1.5rem $content-padding;
     display: flex;
     justify-content: space-between;
   }
@@ -483,7 +526,7 @@ main {
   background-color: $base-color;
   width: 100%;
   min-height: 100%;
-  padding-top: 12vh;
+  padding-top: 11vh;
   position: relative;
 
   display: flex;
@@ -500,6 +543,11 @@ main {
 @media (min-width: $screen-md-min) {
 
   .post {
+
+    .post-photo .html_photoset iframe {
+      width: 75%;
+    }
+
     .post-quote .quote-source {
       align-self: center;
     }
@@ -508,8 +556,14 @@ main {
       width: 20vw;
     }
 
-    .post-photo .html_photoset iframe {
-      width: 75%;
+    .post-link {
+      .link-header a {
+        min-height: 30vh;
+      }
+
+      .link-footer {
+        height: 30vh;
+      }
     }
   }
 

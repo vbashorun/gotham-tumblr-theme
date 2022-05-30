@@ -42,7 +42,7 @@
 
     <!-- These will need to be changed to the static resources in your account -->
     <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
-    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/0j5rcnwcx/gotham.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/isarcq1or/gotham.css" />
 
     <style>
       /* remove the 'open app' button that pops up on mobile */
@@ -158,13 +158,19 @@
               {/block:Quote}
 
               {block:Link}                   <!-- Link Post -->
-              {block:Thumbnail}
-              <div>{Thumbnail}</div>
-              <div>{Thumbnail-HighRes}</div>
-              {/block:Thumbnail}
-              {Name}
-              {URL}
-              {block:Description} {Description} {/block:Description}
+              <div class="link-header">
+                <a href="{URL}" {Target}>
+                  {block:Thumbnail}
+                  <image class="link-image" src="{Thumbnail-HighRes}" />
+                  {/block:Thumbnail}
+
+                  <div class="link-footer">
+                    <h3 class="color-primary">{Name}</h3>
+                    {block:Author}<p class="color-accent"> {Author} </p> {/block:Author}
+                  </div>
+                </a>
+              </div>
+              {block:Description}{Description}{/block:Description}
               {/block:Link}
 
               {block:Chat}                   <!-- Chat Post -->
