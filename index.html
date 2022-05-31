@@ -42,7 +42,7 @@
 
     <!-- These will need to be changed to the static resources in your account -->
     <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/TChp5keg8/normalize.min.css" />
-    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/isarcq1or/gotham.css" />
+    <link rel="stylesheet" href="https://static.tumblr.com/dszz0mz/W3Ircq4rj/gotham.css" />
 
     <style>
       /* remove the 'open app' button that pops up on mobile */
@@ -174,15 +174,15 @@
               {/block:Link}
 
               {block:Chat}                   <!-- Chat Post -->
-              {block:Title} {Title} {/block:Title}
-              {block:Lines}
-              {block:Label} {Label} {/block:Label}
-              {Line}
-              {/block:Lines}
+              {block:Title} <h3 class="color-accent"> {Title} <h3> {/block:Title}
+              <ul>
+                {block:Lines}
+                <li class="{Alt}">{block:Label} <span>{Label}</span> {/block:Label} {Line} </li>
+                {/block:Lines}
+              </ul>
               {/block:Chat}
 
               {block:Audio}                  <!-- Audio Post -->
-
               {block:AlbumArt}
               {AlbumArtURL}
               {/block:AlbumArt}

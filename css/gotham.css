@@ -386,6 +386,30 @@ header h3 {
 .post .post-link .link-footer p {
   margin: 0px;
 }
+.post .post-chat {
+  padding: 1rem 1.5rem;
+}
+.post .post-chat ul {
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.post .post-chat li {
+  width: 100%;
+  min-height: 10vh;
+  padding: 3vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.post .post-chat li.odd {
+  background-color: #404040;
+}
+.post .post-chat li span {
+  display: inline-block;
+  margin-right: 10px;
+}
 .post .post-details {
   width: 100%;
   min-height: 2vh;
@@ -448,6 +472,10 @@ main {
   }
   .post .post-link .link-footer {
     height: 30vh;
+  }
+  .post .post-chat li {
+    min-height: 5vh;
+    padding: 1vw;
   }
 }
 /**************************

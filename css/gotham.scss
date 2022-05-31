@@ -483,6 +483,36 @@ header {
     }
   }
 
+  .post-chat {
+    padding: $content-padding;
+
+    ul {
+      width: 100%;
+      margin-bottom: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+
+    li {
+      width: 100%;
+      min-height: 10vh;
+      padding: 3vw;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &.odd {
+        background-color: $neutral-color;
+      }
+
+      span {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
+
   .post-details {
     width: 100%;
     min-height: 2vh;
@@ -564,6 +594,11 @@ main {
       .link-footer {
         height: 30vh;
       }
+    }
+
+    .post-chat li {
+      min-height: 5vh;
+      padding: 1vw;
     }
   }
 
